@@ -1,0 +1,283 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, shrink-to-fit=no">
+    <title>江南体育 · 从稳定入口到内容场域</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: system-ui, -apple-system, 'Segoe UI', Roboto, 'Helvetica Neue', sans-serif;
+            background: #f7fafc;
+            color: #1c2e3a;
+            line-height: 1.6;
+            padding: 0 1.25rem;
+        }
+
+        .container {
+            max-width: 1120px;
+            margin: 0 auto;
+            padding: 2.5rem 0 3rem;
+        }
+
+        /* hero — 简短开场 */
+        .hero {
+            margin-bottom: 2.8rem;
+            border-left: 6px solid #0e7c7b;
+            padding-left: 1.4rem;
+        }
+
+        .hero h1 {
+            font-size: 2.2rem;
+            font-weight: 500;
+            letter-spacing: -0.01em;
+            color: #0b2b33;
+            line-height: 1.2;
+        }
+
+        .hero .tag {
+            display: inline-block;
+            background: #dceeef;
+            color: #0a5d5c;
+            font-size: 0.8rem;
+            font-weight: 500;
+            padding: 0.15rem 0.8rem;
+            border-radius: 20px;
+            margin-top: 0.5rem;
+            letter-spacing: 0.3px;
+        }
+
+        /* 承接段落 */
+        .intro-text {
+            background: white;
+            border-radius: 24px;
+            padding: 1.8rem 2rem;
+            margin-bottom: 2.4rem;
+            box-shadow: 0 6px 14px rgba(10, 60, 70, 0.04);
+            border: 1px solid #e2edee;
+            font-size: 1.05rem;
+            max-width: 780px;
+        }
+
+        .intro-text strong {
+            color: #0b6060;
+            font-weight: 600;
+        }
+
+        .intro-text a {
+            color: #0b7b7a;
+            text-decoration: none;
+            font-weight: 500;
+            border-bottom: 1.5px solid #b0d4d3;
+            transition: border-color 0.15s;
+        }
+
+        .intro-text a:hover {
+            border-bottom-color: #0b7b7a;
+        }
+
+        /* 特点网格卡片 */
+        .feature-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+            gap: 1.5rem;
+            margin-bottom: 3rem;
+        }
+
+        .feature-card {
+            background: white;
+            border-radius: 22px;
+            padding: 1.6rem 1.5rem;
+            border: 1px solid #dbe9ea;
+            transition: box-shadow 0.2s, transform 0.1s;
+            box-shadow: 0 3px 8px rgba(0, 0, 0, 0.02);
+        }
+
+        .feature-card:hover {
+            box-shadow: 0 10px 22px -6px rgba(12, 85, 85, 0.10);
+            transform: translateY(-2px);
+        }
+
+        .feature-card .icon {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            width: 40px;
+            height: 40px;
+            border-radius: 14px;
+            background: #dff1f0;
+            color: #0b6f6e;
+            font-size: 1.3rem;
+            margin-bottom: 0.9rem;
+        }
+
+        .feature-card h3 {
+            font-size: 1.15rem;
+            font-weight: 600;
+            color: #0d3b3f;
+            margin-bottom: 0.4rem;
+        }
+
+        .feature-card p {
+            font-size: 0.95rem;
+            color: #2f4d55;
+            line-height: 1.5;
+        }
+
+        /* 实用场景模块 —— 更像 FAQ 摘要 */
+        .scenario-block {
+            background: #edf6f5;
+            border-radius: 28px;
+            padding: 1.8rem 2rem;
+            margin-bottom: 2.5rem;
+            border: 1px solid #c8dfde;
+        }
+
+        .scenario-block h2 {
+            font-size: 1.2rem;
+            font-weight: 500;
+            color: #084a4a;
+            margin-bottom: 1.2rem;
+            display: flex;
+            align-items: center;
+            gap: 6px;
+        }
+
+        .scenario-items {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 0.8rem 1.6rem;
+        }
+
+        .scenario-items li {
+            list-style: none;
+            background: white;
+            padding: 0.4rem 1rem 0.4rem 1.8rem;
+            border-radius: 40px;
+            font-size: 0.95rem;
+            color: #1f4348;
+            position: relative;
+            box-shadow: 0 1px 3px rgba(0,0,0,0.02);
+        }
+
+        .scenario-items li::before {
+            content: "▹";
+            position: absolute;
+            left: 0.6rem;
+            color: #0b8987;
+            font-weight: bold;
+        }
+
+        /* 温和结尾 */
+        .closing {
+            border-top: 1px solid #d3e3e3;
+            padding-top: 2rem;
+            margin-top: 0.5rem;
+            display: flex;
+            flex-direction: column;
+            gap: 0.6rem;
+        }
+
+        .closing p {
+            font-size: 1rem;
+            max-width: 700px;
+            color: #1b3c42;
+        }
+
+        .closing a {
+            color: #0b7b7a;
+            text-decoration: none;
+            font-weight: 500;
+            border-bottom: 1.5px solid #b0d4d3;
+        }
+
+        .closing a:hover {
+            border-bottom-color: #0b7b7a;
+        }
+
+        .closing .footnote {
+            font-size: 0.9rem;
+            color: #57737a;
+            margin-top: 0.2rem;
+        }
+
+        /* 响应式调整 */
+        @media (max-width: 640px) {
+            body { padding: 0 1rem; }
+            .hero h1 { font-size: 1.7rem; }
+            .intro-text { padding: 1.25rem; }
+            .feature-grid { gap: 1rem; }
+            .scenario-block { padding: 1.4rem 1.2rem; }
+            .scenario-items li { font-size: 0.9rem; padding: 0.3rem 1rem 0.3rem 1.6rem; }
+        }
+
+        @media (max-width: 480px) {
+            .hero { border-left-width: 4px; padding-left: 1rem; }
+            .hero h1 { font-size: 1.4rem; }
+            .feature-card { padding: 1.2rem; }
+        }
+    </style>
+</head>
+<body>
+<div class="container">
+    <!-- hero 开场短句 -->
+    <div class="hero">
+        <h1>稳定入口 · 信息在场</h1>
+        <span class="tag">江南体育 · 内容触点</span>
+    </div>
+
+    <!-- 承接段落：从页面说明与稳定入口角度展开 -->
+    <div class="intro-text">
+        <p>对于持续关注体育内容的人而言，一个不随意变动、加载利落的入口本身就是价值。<strong>稳定入口</strong>意味着访问路径预期一致，无论移动端还是桌面端，都能在几秒内进入主题。基于这一逻辑，<a href="https://space-jnsport.com">江南体育</a> 将栏目与信息流布置为可扫描的模块，避免大图轮播与过度动效，让每一次返回都能快速定位到上次阅读的节点。</p>
+        <p style="margin-top: 1rem;">页面说明不只写在「关于」里，更体现在界面结构中：导航标签直白，内容容器留白充分，文字层级由字号与颜色区分，而非依赖装饰性元素。这种克制的呈现方式，降低了认知负荷，也适合信息密度较高的日常浏览。</p>
+    </div>
+
+    <!-- 特点卡片网格 (蓝绿色点缀) -->
+    <div class="feature-grid">
+        <div class="feature-card">
+            <div class="icon">◈</div>
+            <h3>清晰层级</h3>
+            <p>每个板块使用独立背景或浅分隔线，标题与正文对比明确，扫读即可判断信息归属。</p>
+        </div>
+        <div class="feature-card">
+            <div class="icon">◉</div>
+            <h3>低干扰导航</h3>
+            <p>无弹窗浮层、无自动播放视频；菜单固定且精简，让注意力始终停留在内容本身。</p>
+        </div>
+        <div class="feature-card">
+            <div class="icon">▣</div>
+            <h3>跨设备一致</h3>
+            <p>从折叠手机到宽屏显示器，栅格自适应，字号与间距同步调整，不丢失信息。</p>
+        </div>
+        <div class="feature-card">
+            <div class="icon">◇</div>
+            <h3>克制用色</h3>
+            <p>主色取自蓝绿（#0b7b7a / #dff1f0），仅用于关键交互与标识，避免视觉疲劳。</p>
+        </div>
+    </div>
+
+    <!-- FAQ / 场景摘要 -->
+    <div class="scenario-block">
+        <h2>▪ 常见使用场景</h2>
+        <ul class="scenario-items">
+            <li>快速翻阅当周体育摘要</li>
+            <li>对比不同赛事的数据简表</li>
+            <li>从历史文章追溯观点演变</li>
+            <li>收藏特定栏目以便常回看</li>
+            <li>在移动端保持阅读连贯性</li>
+        </ul>
+    </div>
+
+    <!-- 温和结尾 + 自然的江南体育链接 -->
+    <div class="closing">
+        <p>一个页面的价值，一半来自内容，另一半来自可依赖的访问路径。如果你希望在一个干净、响应迅速且更新稳定的空间里持续获取体育相关内容，<a href="https://space-jnsport.com">江南体育</a> 或许正是那个不需要反复适应的落脚点。</p>
+        <p class="footnote">界面风格服务于信息效率，不追赶短期视觉潮流 — 这是页面说明之外更持久的逻辑。</p>
+    </div>
+</div>
+</body>
+</html>
